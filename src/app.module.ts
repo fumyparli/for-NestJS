@@ -1,12 +1,12 @@
 import { Module } from "@nestjs/common";
 import { AppController } from "./app.controller";
 import { AppService } from "./app.service";
-import { TypeOrmModule } from "@nestjs/typeorm";
 import { UserModule } from "./modules/user/user.module";
-import { TeamModule } from './modules/team/team.module';
+import { TeamModule } from "./modules/team/team.module";
+import { TypeOrmModule } from "@nestjs/typeorm";
 
 @Module({
-  imports: [UserModule, TypeOrmModule.forRoot({
+  imports: [UserModule, TeamModule, TypeOrmModule.forRoot({
     type: "mysql",
     host: "localhost",
     port: 3306,

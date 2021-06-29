@@ -1,4 +1,5 @@
-import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
+import { Column, Entity, JoinColumn, ManyToOne, PrimaryGeneratedColumn } from "typeorm";
+import { TeamEntity } from "../team/team.entity";
 
 @Entity()
 
@@ -11,5 +12,9 @@ export class UserEntity {
 
   @Column()
   age: number;
+
+  @ManyToOne(type => TeamEntity)
+  @JoinColumn({ name: "team_id" })
+  team: TeamEntity;
 }
 
