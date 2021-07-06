@@ -1,20 +1,14 @@
-import { Column, Entity, JoinColumn, ManyToOne, PrimaryGeneratedColumn } from "typeorm";
-import { TeamEntity } from "../team/team.entity";
+import {Column, Entity, PrimaryGeneratedColumn} from "typeorm";
 
 @Entity()
-
 export class UserEntity {
-  @PrimaryGeneratedColumn()
-  id: number;
+    @PrimaryGeneratedColumn()
+    id: string;
 
-  @Column()
-  name: string;
+    @Column()
+    name: string;
 
-  @Column()
-  age: number;
-
-  @ManyToOne(type => TeamEntity)
-  @JoinColumn({ name: "team_id" })
-  team: TeamEntity;
+    @Column()
+    age: number;
 }
 

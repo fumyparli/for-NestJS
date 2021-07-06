@@ -1,0 +1,12 @@
+{
+  "type": "mysql",
+  "host": "localhost",
+  "port": 3306,
+  "username": "root",
+  "password": "fumyparli",
+  "database": "test",
+  "entities": [
+    "dist/modules/**/*.entity{.ts,.js}"
+  ],
+  "synchronize": true
+}
